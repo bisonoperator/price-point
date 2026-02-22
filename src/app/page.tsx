@@ -56,7 +56,7 @@ function SortableItem({ product, isOverlay = false }: { product: Product; isOver
 
 export default function Home() {
   const [name, setName] = useState("");
-  const [room, setRoom] = useState("default");
+  const [room, setRoom] = useState("");
   const [joined, setJoined] = useState(false);
   const [gameState, setGameState] = useState<GameState | null>(null);
   const [items, setItems] = useState<Product[]>([]);
@@ -64,7 +64,7 @@ export default function Home() {
 
   const socket = usePartySocket({
     host: process.env.NEXT_PUBLIC_PARTYKIT_HOST || "localhost:1999",
-    room: (room || "default").toLowerCase(),
+    room: (room.trim() || "default").toLowerCase(),
     onMessage(evt) {
       const data = JSON.parse(evt.data);
       if (data.type === "state") {
