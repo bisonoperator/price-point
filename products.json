@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Mechanical Keyboard",
+    "price": 89.99,
+    "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&q=80"
+  },
+  {
+    "id": "2",
+    "name": "Wireless Mouse",
+    "price": 24.50,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80"
+  },
+  {
+    "id": "3",
+    "name": "Coffee Grinder",
+    "price": 45.00,
+    "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500&q=80"
+  },
+  {
+    "id": "4",
+    "name": "Hydro Flask",
+    "price": 34.95,
+    "image": "https://images.unsplash.com/photo-1602143302703-f75d7768335c?w=500&q=80"
+  },
+  {
+    "id": "5",
+    "name": "Desk Lamp",
+    "price": 29.99,
+    "image": "https://images.unsplash.com/photo-1534073828943-f801091bb18c?w=500&q=80"
+  },
+  {
+    "id": "6",
+    "name": "Yoga Mat",
+    "price": 55.00,
+    "image": "https://images.unsplash.com/photo-1592432676556-26d56d0abc57?w=500&q=80"
+  }
+]
