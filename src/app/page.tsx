@@ -64,7 +64,7 @@ export default function Home() {
 
   const socket = usePartySocket({
     host: process.env.NEXT_PUBLIC_PARTYKIT_HOST || "localhost:1999",
-    room: room.toLowerCase(),
+    room: (room || "default").toLowerCase(),
     onMessage(evt) {
       const data = JSON.parse(evt.data);
       if (data.type === "state") {
