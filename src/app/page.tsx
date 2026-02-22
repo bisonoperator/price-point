@@ -136,7 +136,7 @@ export default function Home() {
             className="flex-1 flex flex-col items-center justify-center space-y-10"
           >
             <div className="text-center space-y-4">
-              <div className="inline-flex p-4 bg-white shadow-soft rounded-3xl mb-2">
+              <div className="inline-flex p-4 bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.04)] rounded-3xl mb-2">
                 <ShoppingCart className="w-12 h-12 text-indigo-600" strokeWidth={2.5} />
               </div>
               <h1 className="text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-900 to-slate-600">
@@ -145,7 +145,7 @@ export default function Home() {
               <p className="text-slate-500 font-medium">The multiplayer price sorting game.</p>
             </div>
 
-            <Card className="w-full border-none shadow-soft-xl bg-white/80 backdrop-blur-xl p-6 space-y-6">
+            <Card className="w-full border-none shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] bg-white/80 backdrop-blur-xl p-6 space-y-6">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400 ml-1">Nickname</label>
@@ -187,7 +187,7 @@ export default function Home() {
                 <h2 className="text-xl font-black tracking-tighter text-indigo-600 uppercase">Price Point</h2>
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Room: {room}</span>
               </div>
-              <div className="flex items-center bg-white px-3 py-1.5 rounded-full shadow-soft border border-slate-50">
+              <div className="flex items-center bg-white px-3 py-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(0,0,0,0.04)] border border-slate-50">
                 <Users className="w-3.5 h-3.5 text-slate-400 mr-2" />
                 <span className="text-xs font-bold text-slate-600">{Object.keys(gameState?.players || {}).length}</span>
               </div>
@@ -200,7 +200,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
                   className="space-y-6 flex-1 flex flex-col"
                 >
-                  <Card className="border-none shadow-soft bg-white/60 p-6 flex-1">
+                  <Card className="border-none shadow-[0_10px_30px_-10px_rgba(0,0,0,0.04)] bg-white/60 p-6 flex-1">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">Players Waiting</h3>
                     <div className="space-y-3">
                       {sortedPlayers.map(p => (
@@ -292,7 +292,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
                   className="space-y-8"
                 >
-                  <Card className="bg-slate-900 text-white border-none shadow-soft-xl rounded-[2rem] overflow-hidden">
+                  <Card className="bg-slate-900 text-white border-none shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] rounded-[2rem] overflow-hidden">
                     <div className="p-8 text-center space-y-2 bg-gradient-to-b from-slate-800 to-slate-900">
                       <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-2" />
                       <h3 className="text-3xl font-black italic tracking-tighter uppercase">Leaderboard</h3>
@@ -348,12 +348,6 @@ export default function Home() {
       </main>
 
       <style jsx global>{`
-        .shadow-soft {
-          box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
-        }
-        .shadow-soft-xl {
-          box-shadow: 0 20px 50px -12px rgba(0,0,0,0.08);
-        }
         /* Prevents pull-to-refresh on mobile while dragging */
         body {
           overscroll-behavior-y: contain;
