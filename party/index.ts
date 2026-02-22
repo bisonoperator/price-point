@@ -48,7 +48,8 @@ export default class Server implements PartyKitServer {
     room.broadcast(JSON.stringify({ type: "state", state: this.state }));
   }
 
-  onMessage(message: string, conn: Connection, room: Party) {
+  onMessage(message: string | ArrayBuffer | ArrayBufferView, conn: Connection, room: Party) {
+    if (typeof message !== "string") return;
     const data = JSON.parse(message);
     
     if (data.type === "join") {
