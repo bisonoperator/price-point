@@ -75,11 +75,14 @@ export default function Home() {
     host: process.env.NEXT_PUBLIC_PARTYKIT_HOST || "localhost:1999",
     room: (room.trim() || "default").toLowerCase(),
     onOpen() {
+      console.log("Socket connected to room:", room);
       if (joined && name) {
+        console.log("Sending join message for:", name);
         socket.send(JSON.stringify({ type: "join", name }));
       }
     },
     onMessage(evt) {
+      console.log("Message received:", evt.data);
       const data = JSON.parse(evt.data);
       if (data.type === "state") {
         setGameState(data.state);
@@ -103,8 +106,12 @@ export default function Home() {
 
   const handleJoin = () => {
     if (!name) return;
-    socket.send(JSON.stringify({ type: "join", name }));
     setJoined(true);
+    // If socket is already open, send join immediately. 
+    // Otherwise onOpen will catch it.
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.send(JSON.stringify({ type: "join", name }));
+    }
   };
 
   const handleStart = () => {
