@@ -60,9 +60,11 @@ export default function Home() {
 
   // Generate random 4-letter room code on mount
   useEffect(() => {
-    const randomCode = Math.random().toString(36).substring(2, 6).toUpperCase();
-    setRoom(randomCode);
-  }, []);
+    if (!room) {
+      const randomCode = Math.random().toString(36).substring(2, 6).toUpperCase();
+      setRoom(randomCode);
+    }
+  }, [room]);
 
   const [joined, setJoined] = useState(false);
   const [gameState, setGameState] = useState<GameState | null>(null);
