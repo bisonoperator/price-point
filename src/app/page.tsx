@@ -154,7 +154,7 @@ export default function Home() {
                 <ShoppingCart className="w-12 h-12 text-indigo-600" strokeWidth={2.5} />
               </div>
               <h1 className="text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-900 to-slate-600">
-                Price Point
+                Price Point Delta
               </h1>
               <p className="text-slate-500 font-medium">The multiplayer price sorting game.</p>
             </div>
@@ -198,7 +198,7 @@ export default function Home() {
           <div className="flex-1 flex flex-col">
             <header className="flex justify-between items-center mb-8">
               <div className="flex flex-col">
-                <h2 className="text-xl font-black tracking-tighter text-indigo-600 uppercase">Price Point</h2>
+                <h2 className="text-xl font-black tracking-tighter text-indigo-600 uppercase">Price Point Delta</h2>
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Room: {room}</span>
               </div>
               <div className="flex items-center bg-white px-3 py-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(0,0,0,0.04)] border border-slate-50">
