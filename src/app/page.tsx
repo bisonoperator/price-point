@@ -74,6 +74,11 @@ export default function Home() {
   const socket = usePartySocket({
     host: process.env.NEXT_PUBLIC_PARTYKIT_HOST || "localhost:1999",
     room: (room.trim() || "default").toLowerCase(),
+    onOpen() {
+      if (joined && name) {
+        socket.send(JSON.stringify({ type: "join", name }));
+      }
+    },
     onMessage(evt) {
       const data = JSON.parse(evt.data);
       if (data.type === "state") {
