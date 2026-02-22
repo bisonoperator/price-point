@@ -57,6 +57,13 @@ function SortableItem({ product, isOverlay = false }: { product: Product; isOver
 export default function Home() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+
+  // Generate random 4-letter room code on mount
+  useEffect(() => {
+    const randomCode = Math.random().toString(36).substring(2, 6).toUpperCase();
+    setRoom(randomCode);
+  }, []);
+
   const [joined, setJoined] = useState(false);
   const [gameState, setGameState] = useState<GameState | null>(null);
   const [items, setItems] = useState<Product[]>([]);
